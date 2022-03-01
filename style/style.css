@@ -4,33 +4,23 @@
     height: 55vh;
 }
 
-.col-9 {
-    background-color: red;
+.img-wrapper {
+    width: 100%;
+    height: calc(100% / 5);
 }
-
-#vertical-carousel {
-    background-color: rgb(209, 153, 153);
-}
-
-#image-box {
-
-}
-
 
 
 .carousel-image img {
     
 }
 
-div .carousel-image {
-
+.filtered {
+    filter: brightness(50%);
 }
 
-.img-wrapper {
-    height: 50vh;
+.active {
+    border: 1 solid white;
 }
-
-.selected {}
 
 .arrow-up,
 .arrow-down {

@@ -22,24 +22,42 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
+const verticalCarousel = document.getElementById('vertical-carousel');
 const mainImage = document.getElementById('image-box');
 const titleHTML = document.getElementById('title');
 const lorem = document.getElementById('lorem');
 
-// let carouselContent = '';
+let mainImageContent = '';
+let carouselContent = '';
+
+for (let i = 0; i < items.length; i++) {
+    
+    mainImageContent += `
+    <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
+    <div class="text-box">
+        <h2 id="title text-white">${title[i]}</h2>
+        <p id="lorem text-white">${text[i]}</p>
+    </div>`;
+
+    carouselContent += `
+    <div class="img-wrapper">
+        <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
+    </div>`;
+
+}
+console.log(carouselContent);
+
+verticalCarousel.innerHTML = carouselContent;
+mainImage.innerHTML += mainImageContent;
 
 let currentIndex = 0;
 
-for (let i = 0; i < items.length; i++) {
-    // const carouselImage = document.createElement("div");
-    // carouselImage.classList.add('.carousel-image', ) + i;
-    carouselContent += `
-    <div class="img-wrapper">
-        <img src="${items[i]}" class="img-fluid">
-    </div>`;
-}
-
-const varticalCarousel = document.getElementById('varticalCarousel');
-varticalCarousel.innerHTML = carouselContent;
+document.querySelector('.img-wrapper').classList.add('active');
 
 
+
+document.querySelector(".arrouw-up").addEventListener("click", function() {});
+
+
+
+document.querySelector(".arrouw-down").addEventListener("click", function() {});
