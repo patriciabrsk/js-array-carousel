@@ -34,9 +34,9 @@ for (let i = 0; i < items.length; i++) {
     
     mainImageContent += `
     <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
-    <div class="text-box">
-        <h2 id="title text-white">${title[i]}</h2>
-        <p id="lorem text-white">${text[i]}</p>
+    <div class="text-box position-absolute">
+        <h2 id="title" class="text-white text-end">${title[i]}</h2>
+        <p id="lorem" class="text-white text-end">${text[i]}</p>
     </div>`;
 
     carouselContent += `
@@ -47,7 +47,7 @@ for (let i = 0; i < items.length; i++) {
 }
 console.log(carouselContent);
 
-verticalCarousel.innerHTML = carouselContent;
+verticalCarousel.innerHTML += carouselContent;
 mainImage.innerHTML += mainImageContent;
 
 let currentIndex = 0;
@@ -56,7 +56,10 @@ document.querySelector('.img-wrapper').classList.add('active');
 
 
 
-document.querySelector(".arrouw-up").addEventListener("click", function() {});
+document.querySelector(".arrouw-up").addEventListener("click", function() {
+
+    document.querySelector('.img-wrapper').classList.remove('active');
+});
 
 
 

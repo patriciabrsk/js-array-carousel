@@ -4,11 +4,20 @@
     height: 55vh;
 }
 
+#image-box {
+    object-fit: cover;
+}
+
 .img-wrapper {
     width: 100%;
     height: calc(100% / 5);
 }
 
+.text-box {
+    bottom: 5%;
+    width: 80%;
+    right: 3rem;
+}
 
 .carousel-image img {
     
@@ -27,3 +36,12 @@
     background-color:  lightgray;
     border-radius: 50%;
 }
+
+.arrow-up {
+    top: 1rem;
+}
+
+.arrow-down {
+    bottom: 1rem;
+}
+
