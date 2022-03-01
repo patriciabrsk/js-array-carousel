@@ -1,7 +1,7 @@
 
 .row .col-9,
 .row .col {
-    height: 60vh;
+    height: 55vh;
 }
 
 .col-9 {
@@ -30,4 +30,10 @@ div .carousel-image {
     height: 50vh;
 }
 
-.selected
+.selected {}
+
+.arrow-up,
+.arrow-down {
+    background-color:  lightgray;
+    border-radius: 50%;
+}
