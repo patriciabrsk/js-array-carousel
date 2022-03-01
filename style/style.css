@@ -1,0 +1,33 @@
+
+.row .col-9,
+.row .col {
+    height: 60vh;
+}
+
+.col-9 {
+    background-color: red;
+}
+
+#vertical-carousel {
+    background-color: rgb(209, 153, 153);
+}
+
+#image-box {
+
+}
+
+
+
+.carousel-image img {
+    
+}
+
+div .carousel-image {
+
+}
+
+.img-wrapper {
+    height: 50vh;
+}
+
+.selected
