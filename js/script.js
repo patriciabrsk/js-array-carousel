@@ -54,13 +54,32 @@ let currentIndex = 0;
 
 document.querySelector('.img-wrapper').classList.add('active');
 
+const arrowDown = document.querySelector('.arrow-down');
 
+arrowDown.addEventListener("click", 
+    function() {
+        document.querySelector('.img-wrapper').classList.remove('active');
 
-document.querySelector(".arrouw-up").addEventListener("click", function() {
+        currentIndex++;
 
-    document.querySelector('.img-wrapper').classList.remove('active');
-});
+        if (currentIndex == items.length) {
+            currentIndex = 0;
+        }
+        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add("active");
+    }
+);
 
+const arrowUp = document.querySelector('.arrow-up');
 
+arrowUp.addEventListener("click", 
+    function() {
+        document.querySelector('.img-wrapper').classList.remove('active');
 
-document.querySelector(".arrouw-down").addEventListener("click", function() {});
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex = items.length - 1;
+        }
+        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add("active");
+    }
+);
