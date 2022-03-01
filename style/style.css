@@ -2,19 +2,21 @@ body {
     height: 100vh;
 }
 
+
 .row .col-9,
 .row .col {
-    height: 55vh;
+    height: 60vh;
 }
 
 #image-box {
-    object-fit: cover;
-    height: 55vh;
+    height: 60vh;
     overflow: hidden;
 }
 
-.img-wrapper {
-    height: calc(55vh / 5);
+#image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .text-box {
@@ -23,13 +25,19 @@ body {
     right: 3rem;
 }
 
-.carousel {
-    width: 100%;
-    height: 100%;
+#vertical-carousel {
+    overflow: hidden;
 }
 
-.carousel-image img {
-    
+#vertical-carousel .img-wrapper {
+    height: calc(60vh / 5);
+    overflow: hidden;
+}
+
+#vertical-carousel .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .filtered {
@@ -42,7 +50,7 @@ body {
 
 .arrow-up,
 .arrow-down {
-    background-color:  lightgray;
+    background-color:  rgb(151, 151, 151);
     border-radius: 50%;
 }
 

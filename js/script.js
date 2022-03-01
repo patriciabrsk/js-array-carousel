@@ -48,13 +48,13 @@ for (let i = 0; i < items.length; i++) {
 console.log(carouselContent);
 
 verticalCarousel.innerHTML += carouselContent;
+// verticalCarousel.classList.add('d-flex', 'flex-column', 'align-items-center', 'position-relative');
 mainImage.innerHTML += mainImageContent;
-
-let currentIndex = 0;
 
 document.querySelector('.img-wrapper').classList.add('active');
 
 const arrowDown = document.querySelector('.arrow-down');
+let currentIndex = 0;
 
 arrowDown.addEventListener("click", 
     function() {
