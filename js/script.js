@@ -33,12 +33,14 @@ let carouselContent = '';
 for (let i = 0; i < items.length; i++) {
     
     mainImageContent += `
-    <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
-    <div class="text-box position-absolute">
-        <h2 id="title" class="text-white text-end">${title[i]}</h2>
-        <p id="lorem" class="text-white text-end">${text[i]}</p>
+    <div class="main-img">
+        <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
+        <div class="text-box position-absolute">
+            <h2 id="title" class="text-white text-end">${title[i]}</h2>
+            <p id="lorem" class="text-white text-end">${text[i]}</p>
+        </div>
     </div>`;
-
+    
     carouselContent += `
     <div class="img-wrapper">
         <img src="${items[i]}" class="img-fluid" alt="${title[i]}">

@@ -13,6 +13,10 @@ body {
     overflow: hidden;
 }
 
+#image-box .main-img {
+    height: 100%;
+}
+
 #image-box img {
     width: 100%;
     height: 100%;
@@ -31,7 +35,6 @@ body {
 
 #vertical-carousel .img-wrapper {
     height: calc(60vh / 5);
-    overflow: hidden;
 }
 
 #vertical-carousel .img-wrapper img {
