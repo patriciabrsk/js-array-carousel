@@ -54,12 +54,16 @@ let currentIndex = 1;
 document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
 document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
 
+// document.querySelector('.main-img').classList.add('active');
+// document.querySelector('.img-wrapper').classList.add('active');
+// let currentIndex = 1;
+
 const arrowUp = document.querySelector('.arrow-up');
 
 arrowUp.addEventListener("click", 
     function() {
-        document.querySelector('.main-img').classList.remove('active');
-        document.querySelector('.img-wrapper').classList.remove('active');
+        document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
+        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
 
         if (currentIndex == 0) {
             currentIndex = items.length - 1;
