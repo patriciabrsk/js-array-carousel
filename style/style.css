@@ -2,7 +2,6 @@ body {
     height: 100vh;
 }
 
-
 .row .col-9,
 .row .col {
     height: 60vh;
@@ -15,11 +14,16 @@ body {
 
 #image-box .main-img {
     height: 100%;
+    display: none;
 }
 
-#image-box img {
-    width: 100%;
+#image-box .main-img.active{
+    display: block;
+}
+
+#image-box .main-img img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -35,6 +39,12 @@ body {
 
 #vertical-carousel .img-wrapper {
     height: calc(60vh / 5);
+    filter: brightness(50%);
+}
+
+#vertical-carousel .img-wrapper.active {
+    border: 1px solid rgb(182, 180, 180);
+    filter: brightness(100%);
 }
 
 #vertical-carousel .img-wrapper img {
@@ -43,18 +53,12 @@ body {
     object-fit: cover;
 }
 
-.filtered {
-    filter: brightness(50%);
-}
-
-.active {
-    border: 1 solid white;
-}
-
 .arrow-up,
 .arrow-down {
     background-color:  rgb(151, 151, 151);
     border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .arrow-up {

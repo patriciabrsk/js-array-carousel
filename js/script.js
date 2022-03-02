@@ -22,55 +22,37 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-const verticalCarousel = document.getElementById('vertical-carousel');
 const mainImage = document.getElementById('image-box');
-const titleHTML = document.getElementById('title');
-const lorem = document.getElementById('lorem');
+const verticalCarousel = document.getElementById('vertical-carousel');
 
 let mainImageContent = '';
-let carouselContent = '';
+let verticalContent = '';
 
 for (let i = 0; i < items.length; i++) {
     
-    mainImageContent += `
-    <div class="main-img d-none">
+    mainImageContent = `
+    <div class="main-img">
         <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
         <div class="text-box position-absolute">
-            <h2 id="title" class="text-white text-end">${title[i]}</h2>
-            <p id="lorem" class="text-white text-end">${text[i]}</p>
+            <h2 class="text-white text-end">${title[i]}</h2>
+            <p class="text-white text-end">${text[i]}</p>
         </div>
     </div>`;
     
-    carouselContent += `
-    <div class="img-wrapper d-none">
+    verticalContent += `
+    <div class="img-wrapper">
         <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
     </div>`;
 
 }
-// console.log(carouselContent);
+// console.log(verticalContent);
 
 mainImage.innerHTML = mainImageContent;
-verticalCarousel.innerHTML += carouselContent;
+verticalCarousel.innerHTML += verticalContent;
 
-document.querySelector('.img-wrapper').classList.add('active');
-
-const arrowDown = document.querySelector('.arrow-down');
-let currentIndex = 0;
-
-arrowDown.addEventListener("click", 
-    function() {
-        document.querySelector('.main-img').classList.remove('active');
-        document.querySelector('.img-wrapper').classList.remove('active');
-
-        currentIndex++;
-
-        if (currentIndex == items.length) {
-            currentIndex = 0;
-        }
-        document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
-        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
-    }
-);
+let currentIndex = 1;
+document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
+document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
 
 const arrowUp = document.querySelector('.arrow-up');
 
@@ -79,12 +61,30 @@ arrowUp.addEventListener("click",
         document.querySelector('.main-img').classList.remove('active');
         document.querySelector('.img-wrapper').classList.remove('active');
 
-        currentIndex--;
-
-        if (currentIndex < 0) {
+        if (currentIndex == 0) {
             currentIndex = items.length - 1;
+        } else {
+            currentIndex--;
         }
         document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
         document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
     }
 );
+
+const arrowDown = document.querySelector('.arrow-down');
+
+arrowDown.addEventListener("click", 
+    function() {
+        document.querySelector('.main-img').classList.remove('active');
+        document.querySelector('.img-wrapper').classList.remove('active');
+
+        if (currentIndex == items.length - 1) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
+        document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
+        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
+    }
+);
+
