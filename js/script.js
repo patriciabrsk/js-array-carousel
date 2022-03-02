@@ -33,7 +33,7 @@ let carouselContent = '';
 for (let i = 0; i < items.length; i++) {
     
     mainImageContent += `
-    <div class="main-img">
+    <div class="main-img d-none">
         <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
         <div class="text-box position-absolute">
             <h2 id="title" class="text-white text-end">${title[i]}</h2>
@@ -42,16 +42,15 @@ for (let i = 0; i < items.length; i++) {
     </div>`;
     
     carouselContent += `
-    <div class="img-wrapper">
+    <div class="img-wrapper d-none">
         <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
     </div>`;
 
 }
-console.log(carouselContent);
+// console.log(carouselContent);
 
+mainImage.innerHTML = mainImageContent;
 verticalCarousel.innerHTML += carouselContent;
-// verticalCarousel.classList.add('d-flex', 'flex-column', 'align-items-center', 'position-relative');
-mainImage.innerHTML += mainImageContent;
 
 document.querySelector('.img-wrapper').classList.add('active');
 
@@ -60,6 +59,7 @@ let currentIndex = 0;
 
 arrowDown.addEventListener("click", 
     function() {
+        document.querySelector('.main-img').classList.remove('active');
         document.querySelector('.img-wrapper').classList.remove('active');
 
         currentIndex++;
@@ -67,7 +67,8 @@ arrowDown.addEventListener("click",
         if (currentIndex == items.length) {
             currentIndex = 0;
         }
-        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add("active");
+        document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
+        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
     }
 );
 
@@ -75,6 +76,7 @@ const arrowUp = document.querySelector('.arrow-up');
 
 arrowUp.addEventListener("click", 
     function() {
+        document.querySelector('.main-img').classList.remove('active');
         document.querySelector('.img-wrapper').classList.remove('active');
 
         currentIndex--;
@@ -82,6 +84,7 @@ arrowUp.addEventListener("click",
         if (currentIndex < 0) {
             currentIndex = items.length - 1;
         }
-        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add("active");
+        document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
+        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
     }
 );
