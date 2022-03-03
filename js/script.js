@@ -51,19 +51,17 @@ mainImage.innerHTML = mainImageContent;
 verticalCarousel.innerHTML += verticalContent;
 
 let currentIndex = 1;
+// const main = document.querySelectorAll('.main-img');
+// main[currentIndex].classList.add('active');
 document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
 document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
-
-// document.querySelector('.main-img').classList.add('active');
-// document.querySelector('.img-wrapper').classList.add('active');
-// let currentIndex = 1;
 
 const arrowUp = document.querySelector('.arrow-up');
 
 arrowUp.addEventListener("click", 
     function() {
-        document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
-        document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
+        document.getElementsByClassName('main-img')[currentIndex].classList.remove('active');
+        document.getElementsByClassName('img-wrapper')[currentIndex].classList.remove('active');
 
         if (currentIndex == 0) {
             currentIndex = items.length - 1;
@@ -79,8 +77,8 @@ const arrowDown = document.querySelector('.arrow-down');
 
 arrowDown.addEventListener("click", 
     function() {
-        document.querySelector('.main-img').classList.remove('active');
-        document.querySelector('.img-wrapper').classList.remove('active');
+        document.getElementsByClassName('main-img')[currentIndex].classList.remove('active');
+        document.getElementsByClassName('img-wrapper')[currentIndex].classList.remove('active');
 
         if (currentIndex == items.length - 1) {
             currentIndex = 0;
@@ -91,4 +89,3 @@ arrowDown.addEventListener("click",
         document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
     }
 );
-
