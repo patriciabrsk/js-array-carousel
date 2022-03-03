@@ -30,7 +30,7 @@ let verticalContent = '';
 
 for (let i = 0; i < items.length; i++) {
     
-    mainImageContent = `
+    mainImageContent += `
     <div class="main-img">
         <img src="${items[i]}" class="img-fluid" alt="${title[i]}">
         <div class="text-box position-absolute">
@@ -45,14 +45,12 @@ for (let i = 0; i < items.length; i++) {
     </div>`;
 
 }
-// console.log(verticalContent);
 
 mainImage.innerHTML = mainImageContent;
 verticalCarousel.innerHTML += verticalContent;
 
-let currentIndex = 1;
-// const main = document.querySelectorAll('.main-img');
-// main[currentIndex].classList.add('active');
+let currentIndex = 0;
+// console.log(document.getElementsByClassName('main-img'));
 document.getElementsByClassName('main-img')[currentIndex].classList.add('active');
 document.getElementsByClassName('img-wrapper')[currentIndex].classList.add('active');
 
